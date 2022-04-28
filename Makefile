@@ -1,5 +1,5 @@
 IMAGENAME=dilawars/xyce
-TAG="7.4"
+TAG="7.4.0"
 
 all : Dockerfile
 	docker build -t $(IMAGENAME):$(TAG) .

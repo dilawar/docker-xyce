@@ -16,10 +16,10 @@ RUN echo "root ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER bmo
 
 # Install xyce
-WORKDIR /tmp
-ENV MAKEFLAGS=-j4
-RUN git clone https://aur.archlinux.org/yay.git && cd yay \
+WORKDIR /home/bmo
+ENV MAKEFLAGS=-j5
+RUN cd /tmp && git clone https://aur.archlinux.org/yay.git && cd yay \
     && yes | BUIDDIR=/tmp/makepkg makepkg -si \
-    && rm -rf /tmp/*
-RUN yes | yay -aS --cleanafter --noconfirm xyce-serial
+    && rm -rf /tmp/* && rm -rf ~/.cache/*
+RUN yes | yay -aS --cleanafter --noconfirm xyce-serial && rm -rf ~/.cache/*
 RUN Xyce -h
