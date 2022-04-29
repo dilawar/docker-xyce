@@ -1,3 +1,5 @@
+![Docker Pulls](https://img.shields.io/docker/pulls/dilawars/xyce)
+
 # docker-xyce
 
 Docker image of Xyce simulator based on Archlinux. It uses AUR repo
