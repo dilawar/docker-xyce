@@ -6,7 +6,7 @@ all : Dockerfile
 	docker build -t $(IMAGENAME):latest .
 
 test:
-	docker run -it $(IMAGENAME):$(TAG) bash
+	docker run -it $(IMAGENAME):$(TAG) Xyce -h
 
 upload:
 	docker push $(IMAGENAME):$(TAG)
