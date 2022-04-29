@@ -2,7 +2,7 @@
 
 # docker-xyce
 
-[Docker image of Xyce simulator](docker pull dilawars/xyce) based on Archlinux. It uses AUR repo
+[Docker image of Xyce simulator](https://hub.docker.com/r/dilawars/xyce) based on Archlinux. It uses AUR repo
 https://aur.archlinux.org/packages/xyce-serial to build Xyce (serial only).
 
 # Usage
