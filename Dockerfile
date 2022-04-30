@@ -16,12 +16,15 @@ RUN git clone https://aur.archlinux.org/yay.git && cd yay \
     && yes | makepkg -si
 RUN yes | yay -aS --noconfirm xyce-serial
 RUN Xyce -h
+RUN yes | yay -aS --noconfirm adms
 RUN ls -R /home/bmo/.cache/yay
 
 # Main image.
 FROM archlinux:latest
 WORKDIR /root
 COPY --from=base0 /home/bmo/.cache/yay/**/*.zst /root/
+RUN ls -R /root
 RUN pacman -Syyu --noconfirm
 RUN pacman -U --noconfirm *.tar.zst && rm -f *.zst
 RUN Xyce -h
+RUN admsXml
